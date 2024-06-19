@@ -1,0 +1,14 @@
+<div>
+    {% if user %}
+        <span>Hello {{user["First_name"]}} {{user["Last_name"]}}!👋</span>
+        <span> | </span>
+        <a href="{{ url_for('auth_view.logout') }}">Logout</a>
+    {% else %}
+    <span>Hello Gust</span>
+        <span> | </span>
+        <a href="{{ url_for('auth_view.login') }}">Login</a>
+        <span> | </span>
+        <a href="{{ url_for('auth_view.register') }}">Register</a>
+    {% endif %}
+
+</div>

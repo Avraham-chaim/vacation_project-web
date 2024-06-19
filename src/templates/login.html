@@ -1,0 +1,25 @@
+{% extends "layout.html"%}
+
+{% block title %}
+Vacation Website | Login
+{% endblock title %}
+
+
+{% block content%}
+<form method="post" class="fancy-form">
+
+    <h2>Login</h2>
+
+    <label class="label">Email:</label>
+    <input type="email" name="email" value="{{credentials.email}}" class="form-control" placeholder="Email" required minlenth="5" maxlenth="100">
+
+    <label class="label">Password:</label>
+    <input type="password" name="password" value="{{credentials.password}}" class="form-control" placeholder="Password" required minlenth="4" maxlenth="100">
+
+    <button class="btn btn-primary w-100">Login</button>
+
+    <h6 class="no-account">don't have account?</h6>
+    <a class="no-account" href="{{ url_for('auth_view.register') }}">register now</a>
+
+</form>
+{% endblock content%}

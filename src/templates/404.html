@@ -1,0 +1,16 @@
+{% extends "layout.html"%}
+
+{% block title %}
+Page Not Found
+{% endblock title %}
+
+
+{% block content%}
+<h2 class="error-message">The page you are looking for doesn't exist.</h2>
+
+
+<iframe class="video-frame" width="560" height="315" src="https://www.youtube.com/embed/t3otBjVZzT0?autoplay=true" allow="autoplay" title="Page not Found"></iframe>
+
+<a class="home-link" href="{{ url_for('home_view.home') }}">Back To Home</a>
+
+{% endblock content%}

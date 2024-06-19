@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Vacation Website | Add Vacation
+{% endblock title %}
+
+
+{% block content%}
+
+<form method="post" class="fancy-form" enctype="multipart/form-data">
+
+    <h2>Add Vacation</h2>
+    <label class="label">Country: </label>
+
+    <select name="country_id" class="form-control" required>
+        {% if not vacation %} <!--if not vacation selected.. -->
+            <option selected>Select country:</option>
+        {% endif %}
+        
+        {% for country in  countries %} <!--get all the countries. -->
+            {% if country.country_id == vacation.country_id %} <!--if some error we received vacation and we select it.-->
+                <option value={{country.country_id}} selected>{{country.country_name}}</option>
+        
+        {% else %} <!--else getting all the countries without selected.-->
+            <option value={{country.country_id}}>{{country.country_name}}</option>
+        {% endif %}
+
+        {% endfor %}
+    </select>
+    <br>
+
+    <label class="label">Description: </label>
+    <textarea value="{{vacation.vacation_description}}" name="vacation_description" class="form-control" placeholder="Description" required minlength="2" maxlength="300">{{vacation.vacation_description}}</textarea>
+
+    <label class="label">Start Date:</label>
+    <input value="{{vacation.start_date}}" type="date" name="start_date" class="form-control" placeholder="Start Date" required>
+
+    <label class="label">End Date:</label>
+    <input value="{{vacation.end_date}}" type="date" name="end_date" class="form-control" placeholder="End Date" required>
+
+    <label class="label">Price:</label>
+    <input value="{{vacation.price}}" type="number" name="price" step="0.01" class="form-control" placeholder="Price" required min="0" max="10000">
+
+    <label class="label">Image:</label>
+    <input value="{{vacation.image}}" type="file" name="image" accept="image/*" placeholder="Image" class="form-control" required>
+
+    <button class="btn btn-primary w-100">Add</button>
+
+</form>
+{% endblock content%}

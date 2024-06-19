@@ -1,0 +1,39 @@
+{% extends "layout.html"%}
+
+{% block title %}
+Vacation Website | Vacations
+{% endblock title %}
+
+{% block content%}
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for vacation in vacations %}
+        <div class="col">
+            <div class="card h-100">
+
+                <div class= "image-container">
+                    <img src="{{ url_for('vacations_view.get_image',image_name = (vacation.vacation_photo_filename if vacation.vacation_photo_filename else '---')) }}" class="card-img-top" alt="{{ vacation.country_name }}">    
+                     
+                    <div id="likeButton" data-vacation-id="{{vacation.vacation_id}}" class="like-button" onclick="changeLike(this)"><img src="{{ url_for('static', filename='images/icons/heart.png') }}"> likes <span id="likesCount">{{vacation.likes}}</span></div>
+
+                    <h5 class="card-title image-text" >{{ vacation.country_name }}</h5>
+                    <div  class = "dates-div">
+                        <p class = "p-date"><strong>Start Date:</strong>  {{ vacation.start_date }}
+                        <strong>End Date:</strong> {{ vacation.end_date }}</p> 
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="card-text" style="max-height: 100px; overflow: auto;">
+                        <strong>Description:</strong> {{ vacation.vacation_description }}
+                    </div>
+                    <a class="btn btn-primary">${{ vacation.price | round(2) }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content%}

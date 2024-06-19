@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Vacation Website | Edit Vacation
+{% endblock title %}
+
+{% block content%}
+
+<form method="post" class="fancy-form" enctype="multipart/form-data">
+
+    <input type="hidden" name="vacation_id" value="{{vacation.vacation_id}}">
+
+    <h2>Edit Vacation</h2>
+    <label class="label">Country: </label>
+   
+    <select name="country_id" class="form-control">
+        {% for country in  countries %}
+        
+            {% if country.country_id == vacation.country_id %}
+                <option value={{country.country_id}} selected>{{country.country_name}}</option>
+            {% else %}
+                <option value={{country.country_id}}>{{country.country_name}}</option>
+            {% endif %}
+
+        {% endfor %}
+    </select>
+    <br>
+
+    <label class="label">Description: </label>
+    <textarea value="{{vacation.vacation_description}}" name="vacation_description" class="form-control" required minlength="2" maxlength="300">{{vacation.vacation_description}}</textarea>
+
+    <label class="label">Start Date: </label>
+    <input type="date" value="{{vacation.start_date}}" name="start_date" class="form-control" required>
+
+    <label class="label">End Date:</label>
+    <input type="date" value="{{vacation.end_date}}" name="end_date" class="form-control" placeholder="End Date" required>
+
+    <label class="label">Price:</label>
+    <input value="{{vacation.price}}" type="number" name="price" step="0.01" class="form-control" placeholder="Price" required min="0" max="10000">
+
+    <label class="label">Image:</label>
+    <input type="file" name="image" value={{vacation.vacation_photo_filename}} accept="image/*" placeholder="Image" class="form-control">
+    <img src="{{ url_for('vacations_view.get_image',image_name = (vacation.vacation_photo_filename if vacation.vacation_photo_filename else '---')) }}" class="form-control">
+
+    <button class="btn btn-primary w-100">Update</button>
+
+</form>
+{% endblock content%}

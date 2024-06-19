@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background-image: url(../images/home_image.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.fancy-form {
+    background-color: #55B4B0;
+    width: 400px;
+    margin: auto;
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px;
+    text-align: left;
+}
+
+.fancy-form > input {
+    margin-bottom: 20px;
+}
+
+.error {
+    font-size: 16px;
+    background-color: red;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.main-heading {
+    font-weight: bold;
+    text-align: center;
+    background-color:#55B4B0;
+}
+
+.fancy-form > h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.no-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6px; 
+}
+
+.no-account a {
+    margin-top: 10px; 
+    text-decoration: none;
+    color: blue; 
+}
+
+.no-account a:hover {
+    color: darkblue; 
+}
+
+.already-member{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6px; 
+}
+
+.already-member a {
+    margin-top: 10px; 
+    text-decoration: none;
+    color: blue; 
+}
+
+.already-member a:hover {
+    color: darkblue; 
+}
+
+.auth {
+    border: 2px solid green;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.nav-link {
+    color: #3498db; 
+    text-decoration: none;
+    font-weight: bold; 
+    font-size: 16px; 
+    padding: 10px 20px; 
+    background-color: #f0f0f0; 
+    border-radius: 25px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.nav-link:hover {
+    background-color: #3498db;
+    color: #ffffff; 
+}
+
+.nav-link:active {
+    background-color: #2980b9; 
+}
+.image-container{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.image-text{
+    position: absolute;
+    bottom:30px;
+    left: 16px;
+    font-weight: bold;
+}
+.dates-div{
+    position:absolute;
+    background-color: #2980b9;
+    bottom:-5px;
+    width: 100%;
+    text-align: left;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 10px 10px 0px 0px;
+}
+.p-date{
+    padding-left: 16px;
+     
+}
+.delete-button{
+    position: absolute;
+    top:8px;
+    left:5px;
+}
+
+.edit-button {
+    position: absolute;
+    top: 8px;
+    left: 100px;
+    background-color: white; 
+    border: none;
+    color: #007bff; 
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.edit-button:hover {
+    background-color: #007bff; 
+    color: white; 
+}
+
+.delete-button {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    background-color: white; 
+    border: none;
+    color: #007bff; 
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); 
+}
+
+.delete-button:hover {
+    background-color: #007bff; 
+    color: white; 
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.error-message {
+    color: red;
+    background-color:white;
+    text-align: center; 
+    font-weight: bold; 
+    margin: 0 auto; 
+    width: 50%; 
+}
+
+.video-frame {
+    display: block;
+    margin: 20px auto;
+}
+
+.home-link {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 40vh; 
+    padding: 20px;
+}
+
+.home {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 140vh; 
+    padding: 20px;
+}
+
+.like-button {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    background-color: white; 
+    border: none;
+    color: #007bff; 
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);     
+}
+
+
+
+.like-button > img {
+    width: 18px;
+}

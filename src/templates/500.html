@@ -1,0 +1,13 @@
+{% extends "layout.html"%}
+
+{% block title %}
+Some Error
+{% endblock title %}
+
+
+{% block content%}
+<h2 class="error-message">Some error occurred, please try again later.</h2>
+
+<a href="{{ url_for('home_view.home') }}" class="home">Home Page</a>
+
+{% endblock content%}
